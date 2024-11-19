@@ -1,4 +1,4 @@
-import { getCSS, tickConfig, criarGrafico } from "./common.js"
+import { getCSS, tickConfig } from "./common.js"
 
 async function quantidadeUsuariosPorRede() {
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json'
@@ -9,8 +9,8 @@ async function quantidadeUsuariosPorRede() {
 
     const data = [
         {
-            x: aplicativos, 
-            y: apps, 
+            x: nomeDasRedes, 
+            y: quantidadeDeUsuarios, 
             type: 'bar',
             marker: {
                 color: getCSS('--primary-color')
@@ -18,22 +18,22 @@ async function quantidadeUsuariosPorRede() {
         }
     ]
 
-    const layout = {
+    const laytout = {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
-            text: 'aplicativos',
+            text: 'Redes sociais com mais usuários',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
-                family: getCSS('--font'),
-                size: 30
+                size: 30,
+                font: getCSS('--font')
             }
         },
         xaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'nome das redes sociais',
+                text: 'Nome das redes',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -42,16 +42,18 @@ async function quantidadeUsuariosPorRede() {
         yaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'bilhões de usuários ativos',
+                text: 'Bilhões de usuários ativos',
                 font: {
                     color: getCSS('--secondary-color')
                 }
             }
         }
-
     }
 
-    criarGrafico(data, layout)
+    const grafico = document.createElement('div')
+    grafico.className = 'grafico'
+    document.getElementById('graficos-container').appendChild(grafico)
+    Plotly.newPlot(grafico, data, laytout)
 }
 
 quantidadeUsuariosPorRede()
