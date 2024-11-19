@@ -9,8 +9,8 @@ async function quantidadeUsuariosPorRede() {
 
     const data = [
         {
-            x: nomeDasRedes, 
-            y: quantidadeDeUsuarios, 
+            x: aplicativos, 
+            y: apps, 
             type: 'bar',
             marker: {
                 color: getCSS('--primary-color')
@@ -22,7 +22,7 @@ async function quantidadeUsuariosPorRede() {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
-            text: 'Redes sociais com mais usuários no mundo',
+            text: 'aplicativos',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
