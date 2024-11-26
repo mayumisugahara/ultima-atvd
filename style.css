@@ -1,1 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #1e3a8a; /* Azul escuro */
+    --secondary-color: #ffffff; /* Branco */
+    --accent-color: #3b82f6; /* Azul vibrante */
+    --bg-color: #e0f2fe; /* Azul claro */
+    --font-title: 'Russo One', sans-serif; /* Fonte dinâmica para títulos */
+    --font-body: 'Roboto', sans-serif; /* Fonte para o corpo */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: var(--font-title); /* Aplica Russo One ao título da logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    font-size: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+.intro {
+    padding: 2rem 0;
+}
+
+.info-section {
+    padding: 2rem;
+    margin: 2rem auto;
+    background: var(--secondary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+.info-section h2 {
+    font-size: 2.5rem;
+    font-family: var(--font-title); /* Aplica Russo One aos títulos */
+    color: var(--primary-color);
+    margin-bottom
 
